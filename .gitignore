@@ -1,0 +1,24 @@
+# Python & PowerShell scripts from music generator
+*.py
+*.ps1
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Heavy audio stems & demucs separation cache
+stems/
+*.wav
+
+# Unrelated mashup audio files (keep Farben.mp3 for site soundtrack)
+Bulleya*.mp3
+Challa*.mp3
+Choli*.mp3
+Ek Do Teen*.mp3
+Gali*.mp3
+HD*.mp3
+
+# Environment & OS files
+.DS_Store
+Thumbs.db
+*.log

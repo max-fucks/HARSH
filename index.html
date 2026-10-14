@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HARSH | A Celestial Universe & Cherry Blossom Symphony</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Deep Cosmic Galaxy & Stars Canvas (Minimal Visibility VFX) -->
+  <canvas id="galaxy-canvas"></canvas>
+
+  <!-- Falling Cherry Blossom Canvas -->
+  <canvas id="sakura-canvas"></canvas>
+
+  <!-- Floating Golden & Rose Particles -->
+  <div class="particle p1"></div>
+  <div class="particle p2"></div>
+  <div class="particle p3"></div>
+  <div class="particle p4"></div>
+  <div class="particle p5"></div>
+  <div class="particle p6"></div>
+
+  <!-- Ambient Romantic Glow Gradients -->
+  <div class="ambient-glow glow-top"></div>
+  <div class="ambient-glow glow-bottom"></div>
+
+  <!-- Luxury Navigation Bar -->
+  <header class="luxury-nav">
+    <div class="brand-logo">
+      <span class="logo-name">HARSH</span>
+      <span class="logo-sub">&bull; &hearts; &bull;</span>
+    </div>
+    <div class="nav-controls">
+      <!-- Ambient Music Player Toggle -->
+      <button id="music-toggle" class="luxury-btn music-btn" aria-label="Toggle Romantic Soundtrack" title="Play / Pause Romantic Track">
+        <span class="music-icon">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+          <span class="bar bar-4"></span>
+        </span>
+        <span id="music-label">Farben Romance</span>
+      </button>
+
+      <!-- Petal Wind Intensity Button -->
+      <button id="sakura-toggle" class="luxury-btn sakura-btn" title="Toggle Blossom Wind">
+        <span class="sakura-icon">&#10047;</span>
+        <span id="sakura-label">Blossom Drift</span>
+      </button>
+
+      <button id="menu-toggle" class="luxury-btn menu-btn" aria-label="Open Chapters">
+        <span>Archives</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Audio Element (Local Romantic Sound) -->
+  <audio id="ambient-audio" preload="auto" loop>
+    <source src="Farben.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Side Navigation Dots -->
+  <nav class="side-nav" id="side-nav" aria-label="Scene Navigation">
+    <a href="#scene-1" class="nav-dot active" data-title="Genesis"><span>01</span></a>
+    <a href="#scene-2" class="nav-dot" data-title="Golden Hour"><span>02</span></a>
+    <a href="#scene-3" class="nav-dot" data-title="Elegance"><span>03</span></a>
+    <a href="#scene-4" class="nav-dot" data-title="Radiance"><span>04</span></a>
+    <a href="#scene-5" class="nav-dot" data-title="Midnight"><span>05</span></a>
+    <a href="#scene-6" class="nav-dot" data-title="Whispers"><span>06</span></a>
+    <a href="#scene-7" class="nav-dot" data-title="Timeless Grace"><span>07</span></a>
+    <a href="#scene-8" class="nav-dot" data-title="Pure Charm"><span>08</span></a>
+    <a href="#scene-9" class="nav-dot" data-title="Warm Reverie"><span>09</span></a>
+    <a href="#scene-10" class="nav-dot" data-title="Magic Moments"><span>10</span></a>
+    <a href="#scene-11" class="nav-dot" data-title="Soul Symphony"><span>11</span></a>
+    <a href="#scene-12" class="nav-dot" data-title="All Memories"><span>12</span></a>
+  </nav>
+
+  <!-- Slide-out Chapters Drawer -->
+  <div class="chapters-drawer" id="chapters-drawer">
+    <div class="drawer-header">
+      <span class="drawer-title">THE ARCHIVES &bull; HARSH</span>
+      <button id="close-drawer" class="close-btn">&times;</button>
+    </div>
+    <ul class="chapters-list">
+      <li><a href="#scene-1" class="chapter-link"><span class="num">01</span> THE GENESIS &bull; HARSH</a></li>
+      <li><a href="#scene-2" class="chapter-link"><span class="num">02</span> GOLDEN HOUR SUNSET</a></li>
+      <li><a href="#scene-3" class="chapter-link"><span class="num">03</span> TIMELESS ELEGANCE</a></li>
+      <li><a href="#scene-4" class="chapter-link"><span class="num">04</span> SOFT RADIANCE</a></li>
+      <li><a href="#scene-5" class="chapter-link"><span class="num">05</span> MIDNIGHT SERENITY</a></li>
+      <li><a href="#scene-6" class="chapter-link"><span class="num">06</span> WHISPERING CHARMS</a></li>
+      <li><a href="#scene-7" class="chapter-link"><span class="num">07</span> PURE GRACE</a></li>
+      <li><a href="#scene-8" class="chapter-link"><span class="num">08</span> GENTLE BREEZE</a></li>
+      <li><a href="#scene-9" class="chapter-link"><span class="num">09</span> SUN-KISSED MEMORIES</a></li>
+      <li><a href="#scene-10" class="chapter-link"><span class="num">10</span> ROMANTIC REVERIE</a></li>
+      <li><a href="#scene-11" class="chapter-link"><span class="num">11</span> ETERNAL DAWN</a></li>
+      <li><a href="#scene-12" class="chapter-link"><span class="num">12</span> COMPLETE MEMORY GALLERY</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- ==================== 1. HARSH INTRO / GENESIS ==================== -->
+    <section class="scene intro-scene" id="scene-1">
+      <div class="scene-content">
+        <div class="header-group">
+          <div class="sakura-badge">
+            <span class="blossom-glyph">&#10047;</span>
+            <span>A Celestial Symphony</span>
+            <span class="blossom-glyph">&#10047;</span>
+          </div>
+          <h1 class="title">HARSH</h1>
+          <p class="quote">
+            We are not merely wanderers under the sky;<br>we are the cosmos observing its own mystery through quiet moments and passing shadows.
+          </p>
+        </div>
+
+        <div class="image-container" style="--glow-img: url('images/tejasvi/tejasvi_01.jpg');">
+          <div class="image-glow"></div>
+          <img
+            src="images/tejasvi/tejasvi_01.jpg"
+            alt="Harsh"
+            class="hero-image"
+          />
+        </div>
+
+        <div class="scroll-prompt">
+          <span class="blossom-hint">&#10047; SCROLL THROUGH THE CHAPTERS &#10047;</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. GOLDEN HOUR SUNSET ==================== -->
+    <section class="scene" id="scene-2">
+      <div class="scene-content">
+        <div class="section-meta">
+          <span class="chapter-badge">Chapter 02</span>
+          <h2 class="scene-title">GOLDEN HOUR</h2>
+          <p class="scene-subtitle">Time does not pause for beauty, yet in the amber light of departing hours, eternity reveals itself.</p>
+        </div>
+
+        <div class="image-container" style="--glow-img: url('images/tejasvi/tejasvi_02.jpg');">
+          <div class="image-glow"></div>
+          <img
+            src="images/tejasvi/tejasvi_02.jpg"
+            alt="Harsh in Golden Hour"
+            class="hero-image"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. TIMELESS ELEGANCE ==================== -->
+    <section class="scene" id="scene-3">
+      <div class="scene-content">
+        <div class="section-meta">
+          <span class="chapter-badge">Chapter 03</span>
+          <h2 class="scene-title">TIMELESS ELEGANCE</h2>
+          <p class="scene-subtitle">Silence is not the absence of sound, but the presence of stillness where character speaks without utterance.</p>
+        </div>
+
+        <div class="image-container" style="--glow-img: url('images/tejasvi/tejasvi_03.jpg');">
+          <div class="image-glow"></div>
+          <img
+            src="images/tejasvi/tejasvi_03.jpg"
+            alt="Harsh Elegance"
+            class="hero-image"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. SOFT RADIANCE ==================== -->
+    <section class="scene" id="scene-4">
+      <div class="scene-content">
+        <div class="section-meta">
+          <span class="chapter-badge">Chapter 04</span>
+          <h2 class="scene-title">SOFT RADIANCE</h2>
+          <p class="scene-subtitle">Light does not strive to illuminate; it simply exists, and in its calm presence, darkness forgets its own weight.</p>
+        </div>
+
+        <div class="image-container" style="--glow-img: url('images/tejasvi/tejasvi_04.jpg');">
+          <div class="image-glow"></div>
+          <img
+            src="images/tejasvi/tejasvi_04.jpg"
+            alt="Harsh Radiance"
+            class="hero-image"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. MIDNIGHT SERENITY ==================== -->
+    <section class="scene" id="scene-5">
+      <div class="scene-content">
+        <div class="section-meta">
+          <span class="chapter-badge">Chapter 05</span>
+          <h2 class="scene-title">MIDNIGHT SERENITY</h2>
+          <p class="scene-subtitle">It is only when the daylight retreats that we discover the void was never empty—only waiting for starlight.</p>
+        </div>
+
+        <div class="image-container" style="--glow-img: url('images/tejasvi/tejasvi_05.jpg');">
+          <div class="image-glow"></div>
+          <img
+            src="images/tejasvi/tejasvi_05.jpg"
+            alt="Harsh Midnight"
+            class="hero-image"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. WHISPERING CHARMS ==================== -->
+    <section class="scene" id="scene-6">
+      <div class="scene-content">
+        <div class="section-meta">
+          <span class="chapter-badge">Chapter 06</span>
+          <h2 class="scene-title">WHISPERING CHARMS</h2>
+          <p class="scene-subtitle">The deepest truths of existence are never shouted; they reside quietly in the stillness between two thoughts.</p>
+        </div>
+
+        <div class="image-container" style="--glow-img: url('images/tejasvi/tejasvi_06.jpg');">
+          <div class="image-glow"></div>
+          <img
+            src="images/tejasvi/tejasvi_06.jpg"
+            alt="Harsh Whispering Charms"
+            class="hero-image"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. PURE GRACE ==================== -->
+    <section class="scene" id="scene-7">
+      <div class="scene-content">
+        <div class="section-meta">
+          <span class="chapter-badge">Chapter 07</span>
+          <h2 class="scene-title">PURE GRACE</h2>
+          <p class="scene-subtitle">To remain gentle in a world of storms is not frailty, but the rarest and most sovereign form of strength.</p>
+        </div>
+
+        <div class="image-container" style="--glow-img: url('images/tejasvi/tejasvi_08.jpg');">
+          <div class="image-glow"></div>
+          <img
+            src="images/tejasvi/tejasvi_08.jpg"
+            alt="Harsh Pure Grace"
+            class="hero-image"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. GENTLE BREEZE ==================== -->
+    <section class="scene" id="scene-8">
+      <div class="scene-content">
+        <div class="section-meta">
+          <span class="chapter-badge">Chapter 08</span>
+          <h2 class="scene-title">GENTLE BREEZE</h2>
+          <p class="scene-subtitle">Like the invisible wind that sculpts the dunes without leaving a trace, true essence is felt, never conquered.</p>
+        </div>
+
+        <div class="image-container" style="--glow-img: url('images/tejasvi/tejasvi_09.jpg');">
+          <div class="image-glow"></div>
+          <img
+            src="images/tejasvi/tejasvi_09.jpg"
+            alt="Harsh Gentle Breeze"
+            class="hero-image"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 9. SUN-KISSED MEMORIES ==================== -->
+    <section class="scene" id="scene-9">
+      <div class="scene-content">
+        <div class="section-meta">
+          <span class="chapter-badge">Chapter 09</span>
+          <h2 class="scene-title">SUN-KISSED MEMORIES</h2>
+          <p class="scene-subtitle">Memory is the solitary sanctuary of the soul—a quiet shore where past horizons continue to whisper.</p>
+        </div>
+
+        <div class="image-container" style="--glow-img: url('images/tejasvi/tejasvi_10.jpg');">
+          <div class="image-glow"></div>
+          <img
+            src="images/tejasvi/tejasvi_10.jpg"
+            alt="Harsh Sun-Kissed"
+            class="hero-image"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 10. ROMANTIC REVERIE ==================== -->
+    <section class="scene" id="scene-10">
+      <div class="scene-content">
+        <div class="section-meta">
+          <span class="chapter-badge">Chapter 10</span>
+          <h2 class="scene-title">ROMANTIC REVERIE</h2>
+          <p class="scene-subtitle">In the geometry of destiny, paths converge not by chance, but by the quiet gravitational pull of shared dreams.</p>
+        </div>
+
+        <div class="image-container" style="--glow-img: url('images/tejasvi/tejasvi_15.jpg');">
+          <div class="image-glow"></div>
+          <img
+            src="images/tejasvi/tejasvi_15.jpg"
+            alt="Harsh Romantic Reverie"
+            class="hero-image"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 11. ETERNAL DAWN ==================== -->
+    <section class="scene" id="scene-11">
+      <div class="scene-content">
+        <div class="section-meta">
+          <span class="chapter-badge">Chapter 11</span>
+          <h2 class="scene-title">ETERNAL DAWN</h2>
+          <p class="scene-subtitle">We are born of ancient stardust, moving through ephemeral skies, forever seeking what was never lost.</p>
+        </div>
+
+        <div class="image-container" style="--glow-img: url('images/tejasvi/tejasvi_19.jpg');">
+          <div class="image-glow"></div>
+          <img
+            src="images/tejasvi/tejasvi_19.jpg"
+            alt="Harsh Eternal Dawn"
+            class="hero-image"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 12. COMPLETE GALLERY OF MEMORIES ==================== -->
+    <section class="scene gallery-scene" id="scene-12">
+      <div class="gallery-wrapper">
+        <div class="section-meta">
+          <div class="sakura-badge">
+            <span class="blossom-glyph">&#10047;</span>
+            <span>All 27 Tuned Memories</span>
+            <span class="blossom-glyph">&#10047;</span>
+          </div>
+          <h2 class="scene-title">THE ARCHIVES</h2>
+          <p class="scene-subtitle">Fragments of time gathered in reverent silence—each glance a testament to having truly lived.</p>
+        </div>
+
+        <!-- Interactive Memory Grid -->
+        <div class="memories-grid">
+          <!-- Item 7 -->
+          <div class="memory-card" style="--glow-img: url('images/tejasvi/tejasvi_07.jpg');">
+            <div class="card-glow"></div>
+            <img src="images/tejasvi/tejasvi_07.jpg" alt="Memory 07" loading="lazy" />
+            <div class="card-overlay"><span>Moment 07</span></div>
+          </div>
+          <!-- Item 11 -->
+          <div class="memory-card" style="--glow-img: url('images/tejasvi/tejasvi_11.jpg');">
+            <div class="card-glow"></div>
+            <img src="images/tejasvi/tejasvi_11.jpg" alt="Memory 11" loading="lazy" />
+            <div class="card-overlay"><span>Moment 11</span></div>
+          </div>
+          <!-- Item 12 -->
+          <div class="memory-card" style="--glow-img: url('images/tejasvi/tejasvi_12.jpg');">
+            <div class="card-glow"></div>
+            <img src="images/tejasvi/tejasvi_12.jpg" alt="Memory 12" loading="lazy" />
+            <div class="card-overlay"><span>Moment 12</span></div>
+          </div>
+          <!-- Item 13 -->
+          <div class="memory-card" style="--glow-img: url('images/tejasvi/tejasvi_13.jpg');">
+            <div class="card-glow"></div>
+            <img src="images/tejasvi/tejasvi_13.jpg" alt="Memory 13" loading="lazy" />
+            <div class="card-overlay"><span>Moment 13</span></div>
+          </div>
+          <!-- Item 14 -->
+          <div class="memory-card" style="--glow-img: url('images/tejasvi/tejasvi_14.jpg');">
+            <div class="card-glow"></div>
+            <img src="images/tejasvi/tejasvi_14.jpg" alt="Memory 14" loading="lazy" />
+            <div class="card-overlay"><span>Moment 14</span></div>
+          </div>
+          <!-- Item 16 -->
+          <div class="memory-card" style="--glow-img: url('images/tejasvi/tejasvi_16.jpg');">
+            <div class="card-glow"></div>
+            <img src="images/tejasvi/tejasvi_16.jpg" alt="Memory 16" loading="lazy" />
+            <div class="card-overlay"><span>Moment 16</span></div>
+          </div>
+          <!-- Item 17 -->
+          <div class="memory-card" style="--glow-img: url('images/tejasvi/tejasvi_17.jpg');">
+            <div class="card-glow"></div>
+            <img src="images/tejasvi/tejasvi_17.jpg" alt="Memory 17" loading="lazy" />
+            <div class="card-overlay"><span>Moment 17</span></div>
+          </div>
+          <!-- Item 18 -->
+          <div class="memory-card" style="--glow-img: url('images/tejasvi/tejasvi_18.jpg');">
+            <div class="card-glow"></div>
+            <img src="images/tejasvi/tejasvi_18.jpg" alt="Memory 18" loading="lazy" />
+            <div class="card-overlay"><span>Moment 18</span></div>
+          </div>
+          <!-- Item 20 -->
+          <div class="memory-card" style="--glow-img: url('images/tejasvi/tejasvi_20.jpg');">
+            <div class="card-glow"></div>
+            <img src="images/tejasvi/tejasvi_20.jpg" alt="Memory 20" loading="lazy" />
+            <div class="card-overlay"><span>Moment 20</span></div>
+          </div>
+          <!-- Item 21 -->
+          <div class="memory-card" style="--glow-img: url('images/tejasvi/tejasvi_21.jpg');">
+            <div class="card-glow"></div>
+            <img src="images/tejasvi/tejasvi_21.jpg" alt="Memory 21" loading="lazy" />
+            <div class="card-overlay"><span>Moment 21</span></div>
+          </div>
+          <!-- Item 22 -->
+          <div class="memory-card" style="--glow-img: url('images/tejasvi/tejasvi_22.jpg');">
+            <div class="card-glow"></div>
+            <img src="images/tejasvi/tejasvi_22.jpg" alt="Memory 22" loading="lazy" />
+            <div class="card-overlay"><span>Moment 22</span></div>
+          </div>
+          <!-- Item 23 -->
+          <div class="memory-card" style="--glow-img: url('images/tejasvi/tejasvi_23.jpg');">
+            <div class="card-glow"></div>
+            <img src="images/tejasvi/tejasvi_23.jpg" alt="Memory 23" loading="lazy" />
+            <div class="card-overlay"><span>Special Snap 23</span></div>
+          </div>
+          <!-- Item 24 -->
+          <div class="memory-card" style="--glow-img: url('images/tejasvi/tejasvi_24.jpg');">
+            <div class="card-glow"></div>
+            <img src="images/tejasvi/tejasvi_24.jpg" alt="Memory 24" loading="lazy" />
+            <div class="card-overlay"><span>Special Snap 24</span></div>
+          </div>
+          <!-- Item 25 -->
+          <div class="memory-card" style="--glow-img: url('images/tejasvi/tejasvi_25.jpg');">
+            <div class="card-glow"></div>
+            <img src="images/tejasvi/tejasvi_25.jpg" alt="Memory 25" loading="lazy" />
+            <div class="card-overlay"><span>Special Snap 25</span></div>
+          </div>
+          <!-- Item 26 -->
+          <div class="memory-card" style="--glow-img: url('images/tejasvi/tejasvi_26.jpg');">
+            <div class="card-glow"></div>
+            <img src="images/tejasvi/tejasvi_26.jpg" alt="Memory 26" loading="lazy" />
+            <div class="card-overlay"><span>Special Snap 26</span></div>
+          </div>
+          <!-- Item 27 -->
+          <div class="memory-card" style="--glow-img: url('images/tejasvi/tejasvi_27.jpg');">
+            <div class="card-glow"></div>
+            <img src="images/tejasvi/tejasvi_27.jpg" alt="Memory 27" loading="lazy" />
+            <div class="card-overlay"><span>Special Snap 27</span></div>
+          </div>
+        </div>
+
+        <div class="ending-credits">
+          <p class="signature">&mdash; Harsh &mdash;</p>
+          <a href="#scene-1" class="luxury-btn replay-btn">&uarr; Back to the Beginning</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox Modal for Full View -->
+  <div id="lightbox" class="lightbox-modal">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Full view">
+  </div>
+
+  <footer class="site-footer">
+    <p>&bull; Crafted with Cherry Blossoms, Love & Ambient Glows &bull;</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
