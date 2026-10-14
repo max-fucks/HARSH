@@ -23,11 +23,18 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   background-color: var(--bg-deep);
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  -webkit-text-size-adjust: 100%;
 }
 
 /* Cinematic Background with Rose Velvet & Warm Amber Undertones */
 body {
   margin: 0;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
   background:
     radial-gradient(
       circle at 50% 0%,
@@ -379,12 +386,16 @@ body {
    ===================================================================== */
 .scene {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 100px 20px;
   position: relative;
   z-index: 5;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 .scene-content {
@@ -755,34 +766,221 @@ body {
   text-transform: uppercase;
 }
 
-/* Mobile responsive adjustments */
-@media (max-width: 768px) {
-  .scene {
-    padding: 70px 14px;
-  }
-  .luxury-nav {
-    padding: 16px 20px;
-  }
+/* =====================================================================
+   COMPREHENSIVE RESPONSIVE ENGINE (MOBILE & TABLET ULTRA-FIT)
+   ===================================================================== */
+
+@media (max-width: 900px) {
   .side-nav {
     display: none;
   }
-  .image-container {
-    width: 95vw;
+}
+
+@media (max-width: 768px) {
+  /* Prevent any horizontal page shaking or overflow */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
   }
-  .image-glow {
-    filter: blur(80px);
-    inset: -40px;
+
+  /* Compact Sleek Navigation Header */
+  .luxury-nav {
+    padding: 10px 14px;
+    background: rgba(7, 5, 7, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
-  .hero-image {
-    border-radius: 24px;
-    max-height: 65vh;
+
+  .brand-logo .logo-name {
+    font-size: 1.15rem;
+    letter-spacing: 4px;
   }
+
+  .brand-logo .logo-sub {
+    font-size: 0.8rem;
+  }
+
+  .nav-controls {
+    gap: 8px;
+  }
+
+  .luxury-btn {
+    padding: 7px 12px;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    gap: 6px;
+  }
+
+  /* Shorten text on mobile so buttons stay on 1 clean row */
+  #music-label, #sakura-label {
+    display: none;
+  }
+
+  .menu-btn span {
+    font-size: 0.72rem;
+  }
+
+  /* Scenes & Viewport-aware layout */
+  .scene {
+    min-height: 100dvh;
+    min-height: -webkit-fill-available;
+    padding: 68px 14px 30px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .scene-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .header-group {
+    margin-bottom: 16px;
+  }
+
+  .section-meta {
+    margin-bottom: 16px;
+    padding: 0 6px;
+  }
+
+  /* Typography scaled to fit any phone screen */
   .title {
-    letter-spacing: 8px;
-    font-size: clamp(3.2rem, 14vw, 5.5rem);
+    font-size: clamp(2.4rem, 11.5vw, 3.8rem);
+    letter-spacing: 6px;
+    margin: 0 0 10px;
+    line-height: 1.1;
+    word-break: keep-all;
   }
+
+  .quote {
+    font-size: clamp(0.92rem, 3.8vw, 1.12rem);
+    line-height: 1.55;
+    padding: 0 8px;
+    max-width: 100%;
+  }
+
+  .scene-title {
+    font-size: clamp(1.4rem, 6.5vw, 2.2rem);
+    letter-spacing: 4px;
+    margin: 0 0 8px;
+  }
+
+  .scene-subtitle {
+    font-size: clamp(0.85rem, 3.4vw, 1.05rem);
+    line-height: 1.5;
+    padding: 0 6px;
+  }
+
+  .sakura-badge, .chapter-badge {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    margin-bottom: 10px;
+  }
+
+  /* Perfect Image Fitting (No Overflow) */
+  .image-container {
+    width: 100%;
+    max-width: min(520px, 92vw);
+    max-height: 58dvh;
+    margin: 0 auto;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-height: 54dvh;
+    object-fit: contain;
+    border-radius: 20px;
+    transform: scale(0.98);
+    box-shadow: 0 0 45px rgba(255, 183, 197, 0.22);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
+  }
+
+  .hero-image:hover {
+    transform: scale(1);
+  }
+
+  .image-glow {
+    inset: -25px;
+    filter: blur(45px);
+    transform: scale(1.06);
+    opacity: 0.72;
+    border-radius: 24px;
+  }
+
+  .scroll-prompt {
+    margin-top: 16px;
+    gap: 6px;
+  }
+
+  .scroll-line {
+    height: 26px;
+  }
+
+  /* All Memories Gallery Grid */
+  .gallery-scene {
+    padding: 55px 10px 90px;
+  }
+
   .memories-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .memory-card {
+    border-radius: 12px;
+    aspect-ratio: 9 / 13;
+  }
+
+  .card-overlay span {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
+
+  .signature {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+
+  .ending-credits {
+    margin-top: 36px;
+    gap: 12px;
+  }
+
+  .replay-btn {
+    padding: 10px 20px;
+    font-size: 0.75rem;
+  }
+
+  .site-footer {
+    padding: 22px 10px;
+    font-size: 0.72rem;
+  }
+}
+
+/* Extra small devices (<= 380px) */
+@media (max-width: 380px) {
+  .brand-logo .logo-name {
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+  }
+
+  .title {
+    font-size: 2.1rem;
+    letter-spacing: 3px;
+  }
+
+  .scene-title {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+
+  .memories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 }
